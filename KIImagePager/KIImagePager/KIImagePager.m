@@ -145,12 +145,13 @@
 
 - (void) initializeCaption
 {
-    _captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, _scrollView.frame.size.width - 10, 20)];
+    _captionLabel = [[MarqueeLabel alloc] initWithFrame:CGRectMake(5, _scrollView.frame.size.height - 40, _scrollView.frame.size.width - 10, 20)]; // HACKING
     [_captionLabel setBackgroundColor:self.captionBackgroundColor];
     [_captionLabel setTextColor:self.captionTextColor];
     [_captionLabel setFont:self.captionFont];
+    _captionLabel.textAlignment = NSTextAlignmentCenter;
 
-    _captionLabel.alpha = 0.7f;
+    _captionLabel.alpha = 1.0f;
     _captionLabel.layer.cornerRadius = 5.0f;
 
     [self addSubview:_captionLabel];
